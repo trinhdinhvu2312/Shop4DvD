@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "lr9vQZEA2oXA/vNLvY8D9QEnqU5AsrN+Z3LWsPaXRb0=",
+  "Source": "s4dServer",
+  "BasePath": "_content/s4dServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
