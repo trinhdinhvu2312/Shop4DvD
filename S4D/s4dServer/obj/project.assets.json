@@ -474,11 +474,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Aptech\\e-Project3\\Shop4DvD\\S4D\\S4D.csproj",
-      "projectName": "S4D",
-      "projectPath": "D:\\Aptech\\e-Project3\\Shop4DvD\\S4D\\S4D.csproj",
+      "projectUniqueName": "D:\\Aptech\\e-Project3\\Shop4DvD\\S4D\\s4dServer\\s4dServer.csproj",
+      "projectName": "s4dServer",
+      "projectPath": "D:\\Aptech\\e-Project3\\Shop4DvD\\S4D\\s4dServer\\s4dServer.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Aptech\\e-Project3\\Shop4DvD\\S4D\\obj\\",
+      "outputPath": "D:\\Aptech\\e-Project3\\Shop4DvD\\S4D\\s4dServer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
