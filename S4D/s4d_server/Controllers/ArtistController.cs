@@ -21,7 +21,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet]
+        [HttpGet("[action]")]
         public async Task<ActionResult<ServiceResponse<PagingModel<ArtistResponseDTO>>>> GetAllArtists(int page, int pageSize, string? artistName)
         {
             var response = new ServiceResponse<PagingModel<ArtistResponseDTO>>();
@@ -46,7 +46,7 @@ namespace s4dServer.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("[action]")]
         public async Task<ActionResult<ServiceResponse<ArtistResponseDTO>>> AddArtist([FromBody] ArtistRequestDTO artistRequestDTO)
         {
             var response = new ServiceResponse<ArtistResponseDTO>();
@@ -82,7 +82,7 @@ namespace s4dServer.Controllers
             }
         }
 
-        [HttpPut("{artistId}")]
+        [HttpPut("[action]/{artistId}")]
         public async Task<ActionResult<ServiceResponse<ArtistResponseDTO>>> UpdateArtist(int artistId, [FromBody] ArtistRequestDTO artistRequestDTO)
         {
             var response = new ServiceResponse<ArtistResponseDTO>();
@@ -118,7 +118,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("{artistId}")]
+        [HttpGet("[action]/{artistId}")]
         public async Task<ActionResult<ServiceResponse<ArtistResponseDTO>>> GetArtistById(int artistId)
         {
             var response = new ServiceResponse<ArtistResponseDTO>();
@@ -152,7 +152,7 @@ namespace s4dServer.Controllers
             }
         }
 
-        [HttpDelete("{artistId}")]
+        [HttpDelete("[action]/{artistId}")]
         public async Task<ActionResult<ServiceResponse<bool>>> DeleteArtist(int artistId)
         {
             var response = new ServiceResponse<bool>();

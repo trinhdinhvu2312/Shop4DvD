@@ -21,7 +21,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet]
+        [HttpGet("[action]")]
         public async Task<ActionResult<ServiceResponse<PagingModel<AlbumResponseDTO>>>> GetAllAlbums(int page, int pageSize, string? albumName)
         {
             var response = new ServiceResponse<PagingModel<AlbumResponseDTO>>();
@@ -46,7 +46,7 @@ namespace s4dServer.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("[action]")]
         public async Task<ActionResult<ServiceResponse<AlbumResponseDTO>>> AddAlbum([FromBody] AlbumRequestDTO albumRequestDTO)
         {
             var response = new ServiceResponse<AlbumResponseDTO>();
@@ -71,7 +71,7 @@ namespace s4dServer.Controllers
             }
         }
 
-        [HttpPut("{albumId}")]
+        [HttpPut("[action]/{albumId}")]
         public async Task<ActionResult<ServiceResponse<AlbumResponseDTO>>> UpdateAlbum(int albumId, [FromBody] AlbumRequestDTO albumRequestDTO)
         {
             var response = new ServiceResponse<AlbumResponseDTO>();
@@ -107,7 +107,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("{albumId}")]
+        [HttpGet("[action]/{albumId}")]
         public async Task<ActionResult<ServiceResponse<AlbumResponseDTO>>> GetAlbumById(int albumId)
         {
             var response = new ServiceResponse<AlbumResponseDTO>();
@@ -141,7 +141,7 @@ namespace s4dServer.Controllers
             }
         }
 
-        [HttpDelete("{albumId}")]
+        [HttpDelete("[action]/{albumId}")]
         public async Task<ActionResult<ServiceResponse<bool>>> DeleteAlbum(int albumId)
         {
             var response = new ServiceResponse<bool>();

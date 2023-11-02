@@ -21,7 +21,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("{orderId}")]
+        [HttpGet("[action]/{orderId}")]
         public async Task<ActionResult<ServiceResponse<OrderResponseDTO>>> GetOrderById(int orderId)
         {
             var response = await orderService.GetOrderById(orderId);
@@ -38,7 +38,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("info/{orderId}")]
+        [HttpGet("[action]/info/{orderId}")]
         public async Task<ActionResult<ServiceResponse<OrderInfoResponseDTO>>> GetOrderInfoByOrderId(int orderId)
         {
             var response = await orderService.GetOrderInfoByOrderId(orderId);
@@ -54,7 +54,7 @@ namespace s4dServer.Controllers
             return response;
         }
 
-        [HttpPost]
+        [HttpPost("[action]")]
         public async Task<ActionResult<ServiceResponse<OrderResponseDTO>>> AddOrder([FromBody] OrderRequestDTO orderRequestDTO)
         {
             var response = await orderService.AddOrder(orderRequestDTO);
@@ -71,7 +71,7 @@ namespace s4dServer.Controllers
             return response;
         }
 
-        [HttpPut("{orderId}")]
+        [HttpPut("[action]/{orderId}")]
         public async Task<ActionResult<ServiceResponse<OrderResponseDTO>>> UpdateOrder(int orderId, [FromBody] OrderRequestDTO orderRequestDTO)
         {
             var response = await orderService.UpdateOrder(orderRequestDTO);
@@ -88,7 +88,7 @@ namespace s4dServer.Controllers
             return response;
         }
 
-        [HttpDelete("{orderId}")]
+        [HttpDelete("[action]/{orderId}")]
         public async Task<ActionResult<ServiceResponse<bool>>> RemoveOrder(int orderId)
         {
             var result = await orderService.RemoveOrder(orderId);
@@ -110,7 +110,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet]
+        [HttpGet("[action]")]
         public async Task<ActionResult<ServiceResponse<PagingModel<OrderResponseDTO>>>> GetAllOrders(int page, int pageSize, int userId)
         {
             var response = new ServiceResponse<PagingModel<OrderResponseDTO>>();

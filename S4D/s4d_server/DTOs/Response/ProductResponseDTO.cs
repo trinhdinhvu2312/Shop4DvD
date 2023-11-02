@@ -11,6 +11,7 @@
         public string? ProviderName { get; set; }
         public int Duration { get; set; }
         public string? Image { get; set; }
+        public PromotionResponseDTO? Promotion { get; set; }
     }
 
 }

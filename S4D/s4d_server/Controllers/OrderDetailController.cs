@@ -19,21 +19,21 @@ namespace s4dServer.Controllers
             this.orderDetailService = orderDetailService;
         }
 
-        [HttpPost]
+        [HttpPost("[action]")]
         public async Task<ActionResult<ServiceResponse<IEnumerable<OrderDetailResponseDTO>>>> CreateOrderDetail(IEnumerable<ProductOrderRequestDTO> productOrderRequestDTOs)
         {
             var response = await orderDetailService.CreateOrderDetail(productOrderRequestDTOs);
             return StatusCode(response.Status ? StatusCodes.Status200OK : StatusCodes.Status500InternalServerError, response);
         }
 
-        [HttpDelete]
+        [HttpDelete("[action]")]
         public async Task<ActionResult<ServiceResponse<bool>>> RemoveOrderDetail(OrderDetailRequestDTO orderDetailRequestDTO)
         {
             var response = await orderDetailService.RemoveOrderDetail(orderDetailRequestDTO);
             return StatusCode(response.Status ? StatusCodes.Status200OK : StatusCodes.Status500InternalServerError, response);
         }
 
-        [HttpPut]
+        [HttpPut("[action]")]
         public async Task<ActionResult<ServiceResponse<bool>>> EditOrderDetail(OrderDetailRequestDTO orderDetailRequestDTO)
         {
             var response = await orderDetailService.EditOrderDetail(orderDetailRequestDTO);

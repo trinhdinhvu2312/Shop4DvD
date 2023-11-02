@@ -24,7 +24,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet]
+        [HttpGet("[action]")]
         public async Task<ActionResult<ServiceResponse<PagingModel<ProductResponseDTO>>>> GetAllProducts(int page, int pageSize, string? productName, string? category)
         {
             var response = new ServiceResponse<PagingModel<ProductResponseDTO>>();
@@ -49,14 +49,14 @@ namespace s4dServer.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("[action]")]
         public async Task<ActionResult<ServiceResponse<ProductResponseDTO>>> AddProduct([FromBody] ProductRequestDTO newItem)
         {
             var response = await productService.AddItem(newItem);
             return response;
         }
 
-        [HttpPut("{productId}")]
+        [HttpPut("[action]/{productId}")]
         public async Task<ActionResult<ServiceResponse<ProductResponseDTO>>> UpdateProduct(int productId, [FromBody] ProductRequestDTO updatedItem)
         {
             var response = await productService.UpdateItem(updatedItem);
@@ -64,7 +64,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("{productId}")]
+        [HttpGet("[action]/{productId}")]
         public async Task<ActionResult<ServiceResponse<ProductResponseDTO>>> GetProductById(int productId)
         {
             var response = new ServiceResponse<ProductResponseDTO>();
@@ -98,7 +98,7 @@ namespace s4dServer.Controllers
             }
         }
 
-        [HttpDelete("{productId}")]
+        [HttpDelete("[action]/{productId}")]
         public async Task<ActionResult<ServiceResponse<int>>> DeleteProduct(int productId)
         {
             var response = new ServiceResponse<int>();
@@ -133,7 +133,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("category/{categoryId}")]
+        [HttpGet("[action]/category/{categoryId}")]
         public ActionResult<List<ProductResponseDTO>> GetProductsByCategoryId(int categoryId)
         {
             var products = productService.GetProductByCategoryId(categoryId);
@@ -141,7 +141,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("search")]
+        [HttpGet("[action]/search")]
         public async Task<ActionResult<List<ProductResponseDTO>>> SearchProducts(int categoryId, string? search)
         {
             var products = await productService.SearchProduct(categoryId, search);

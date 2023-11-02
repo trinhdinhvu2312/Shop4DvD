@@ -58,7 +58,7 @@ namespace s4dServer.Services.ServiceImpl
 
         public async Task<ServiceResponse<PromotionResponseDTO>> UpdatePromotion(PromotionRequestDTO updatedPromotion)
         {
-            var promotion = await _context.Promotions.FindAsync(updatedPromotion.PromotionId);
+            var promotion = await _context.Promotions.FindAsync(updatedPromotion.PromotionID);
 
             if (promotion == null)
             {

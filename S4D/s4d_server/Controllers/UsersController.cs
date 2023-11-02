@@ -23,14 +23,14 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("login")]
+        [HttpPost("Login")]
         public Task<ActionResult> Login([FromBody] LoginRequestDTO model)
         {
             return _authService.Login(model);
         }
 
         [AllowAnonymous]
-        [HttpPost("register")]
+        [HttpPost("Register")]
         public Task<ActionResult> Register([FromBody] RegisterRequestDTO model)
         {
             return _authService.Register(model);

@@ -21,7 +21,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet]
+        [HttpGet("[action]")]
         public async Task<ActionResult<ServiceResponse<PagingModel<CategoryResponseDTO>>>> GetAllCategories(int page, int pageSize, string? categoryName)
         {
             var response = new ServiceResponse<PagingModel<CategoryResponseDTO>>();
@@ -46,7 +46,7 @@ namespace s4dServer.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("[action]")]
         public async Task<ActionResult<ServiceResponse<CategoryResponseDTO>>> AddCategory([FromBody] CategoryRequestDTO categoryRequestDTO)
         {
             var response = new ServiceResponse<CategoryResponseDTO>();
@@ -71,7 +71,7 @@ namespace s4dServer.Controllers
             }
         }
 
-        [HttpPut("{categoryId}")]
+        [HttpPut("[action]/{categoryId}")]
         public async Task<ActionResult<ServiceResponse<CategoryResponseDTO>>> UpdateCategory(int categoryId, [FromBody] CategoryRequestDTO categoryRequestDTO)
         {
             var response = new ServiceResponse<CategoryResponseDTO>();
@@ -107,7 +107,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("{categoryId}")]
+        [HttpGet("[action]/{categoryId}")]
         public async Task<ActionResult<ServiceResponse<CategoryResponseDTO>>> GetCategoryById(int categoryId)
         {
             var response = new ServiceResponse<CategoryResponseDTO>();
@@ -141,7 +141,7 @@ namespace s4dServer.Controllers
             }
         }
 
-        [HttpDelete("{categoryId}")]
+        [HttpDelete("[action]/{categoryId}")]
         public async Task<ActionResult<ServiceResponse<bool>>> DeleteCategory(int categoryId)
         {
             var response = new ServiceResponse<bool>();

@@ -22,21 +22,21 @@ namespace s4dServer.Controllers
             this.reviewService = reviewService;
         }
 
-        [HttpPost]
+        [HttpPost("[action]")]
         public async Task<ActionResult<ServiceResponse<ReviewResponseDTO>>> AddReview([FromBody] ReviewRequestDTO newReview)
         {
             var response = await reviewService.AddReview(newReview);
             return response;
         }
 
-        [HttpPut("{reviewId}")]
+        [HttpPut("[action]/{reviewId}")]
         public async Task<ActionResult<ServiceResponse<ReviewResponseDTO>>> UpdateReview(int reviewId, [FromBody] ReviewRequestDTO updatedReview)
         {
             var response = await reviewService.UpdateReview(updatedReview);
             return response;
         }
 
-        [HttpDelete("{reviewId}")]
+        [HttpDelete("[action]/{reviewId}")]
         public async Task<ActionResult<ServiceResponse<bool>>> DeleteReview(int reviewId)
         {
             var response = await reviewService.DeleteReview(reviewId);
@@ -44,7 +44,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("{reviewId}")]
+        [HttpGet("[action]/{reviewId}")]
         public async Task<ActionResult<ReviewResponseDTO>> GetReviewById(int reviewId)
         {
             var review = await reviewService.GetReviewById(reviewId);
@@ -62,7 +62,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("product/{productId}")]
+        [HttpGet("[action]/product/{productId}")]
         public async Task<ActionResult<List<ReviewResponseDTO>>> GetReviewsByProductId(int productId)
         {
             var reviews = await reviewService.GetReviewsByProductId(productId);
@@ -70,7 +70,7 @@ namespace s4dServer.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("user/{userId}")]
+        [HttpGet("[action]/user/{userId}")]
         public async Task<ActionResult<List<ReviewResponseDTO>>> GetReviewsByUserId(int userId)
         {
             var reviews = await reviewService.GetReviewsByUserId(userId);
