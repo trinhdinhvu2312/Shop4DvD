@@ -355,3 +355,9 @@ D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\bin\Debug\net7.0\zh-Hant\Microsoft.
 D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\bin\Debug\net7.0\AutoMapper.dll
 D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\bin\Debug\net7.0\System.Net.Http.Formatting.dll
+D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\bin\Debug\net7.0\System.Web.Http.dll
+D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\bin\Debug\net7.0\System.Web.Http.WebHost.dll
+D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\bin\Debug\net7.0\Microsoft.Web.Infrastructure.dll
+D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\bin\Debug\net7.0\Swashbuckle.Core.dll
+D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\bin\Debug\net7.0\WebActivatorEx.dll

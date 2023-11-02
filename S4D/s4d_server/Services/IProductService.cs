@@ -20,6 +20,6 @@ namespace s4dServer.Services
 
         public ProductResponseDTO GetProductById(int id);
 
-        public Task<ServiceResponse<int>> DeleteProduct(int productId);
+        public Task<ServiceResponse<bool>> DeleteProduct(int productId);
     }
 }

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -42,8 +43,11 @@ builder.Services.AddSwaggerGen(opt =>
     });
 });
 
+builder.Services.AddHttpContextAccessor();
+
+
 builder.Services.AddDbContext<S4DContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerConnection") ?? ""));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerConnection") ?? ""));
 
 builder.Services.AddScoped<IUserService, UserServiceImpl>();
 builder.Services.AddScoped<IAuthService, AuthServiceImpl>();
@@ -54,7 +58,6 @@ builder.Services.AddScoped<IOrderDetailService, OrderDetailServiceImpl>();
 builder.Services.AddScoped<IProductService, ProductServiceImpl>();
 builder.Services.AddScoped<IPromotionService, PromotionServiceImpl>();
 builder.Services.AddScoped<IReviewService, ReviewServiceImpl>();
-
 
 
 builder.Services.AddAuthentication(options =>
@@ -76,20 +79,23 @@ builder.Services.AddAuthentication(options =>
             ValidAudience = builder.Configuration["JwtConfig:Audience"]
         };
     });
-
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+});
 
-app.UseHttpsRedirection();
+app.UseCors("CORSPolicy");
+
+app.UseRouting();
 
 app.UseAuthentication();
+
 app.UseAuthorization();
 
 app.MapControllers();
