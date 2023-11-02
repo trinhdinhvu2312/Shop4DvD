@@ -93,21 +93,23 @@ namespace s4dServer.Services.ServiceImpl
             decimal subtotal = product.Price * quantity;
 
             // Kiểm tra nếu sản phẩm có Promotion và Promotion đang có hiệu lực
-            var promotionProduct = _context.PromotionProducts.FirstOrDefault(pp => pp.ProductID == product.ProductID);
-            if (promotionProduct != null && promotionProduct.Promotion != null && IsPromotionValid(promotionProduct.Promotion))
+            var promotionProduct = _context.Promotions.FirstOrDefault(pp => 
+                                                        pp.Products.Any(p => p.ProductID == product.ProductID));
+            if (promotionProduct != null && promotionProduct.PromotionName != null && IsPromotionValid(promotionProduct.PromotionName))
             {
-                subtotal -= subtotal * promotionProduct.Promotion.DiscountPercentage;
+                subtotal -= subtotal * promotionProduct.DiscountPercentage;
             }
 
             return subtotal;
         }
 
-        private bool IsPromotionValid(Promotion promotion)
+        private bool IsPromotionValid(string promotionName)
         {
             // Kiểm tra xem Promotion có trong khoảng thời gian hiệu lực hay không
             DateTime currentDate = DateTime.Now.Date;
 
-            if (promotion.StartDate.HasValue && promotion.EndDate.HasValue)
+            var promotion = _context.Promotions.FirstOrDefault(p => p.PromotionName == promotionName);
+            if (promotion != null && promotion.StartDate.HasValue && promotion.EndDate.HasValue)
             {
                 if (currentDate >= promotion.StartDate.Value && currentDate <= promotion.EndDate.Value)
                 {

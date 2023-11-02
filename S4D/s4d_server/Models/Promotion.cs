@@ -17,12 +17,8 @@ namespace s4dServer.Models
 
         public DateTime? EndDate { get; set; }
 
-        public decimal DiscountPercentage { get; internal set; }
+        public int DiscountPercentage { get; set; }
 
         public ICollection<Product> Products { get; set; } = new List<Product>();
-
-        [IgnoreDataMember]
-        public virtual ICollection<PromotionProduct> PromotionProducts { get; set; } = new List<PromotionProduct>();
-       
     }
 }

@@ -17,6 +17,9 @@ namespace s4dServer.Models
         [ForeignKey("Category")]
         public int CategoryID { get; set; }
 
+        [ForeignKey("Promotion")]
+        public int PromotionID { get; set; }
+
         [Column(TypeName = "decimal(10, 2)")]
         public decimal Price { get; set; }
 
@@ -37,7 +40,5 @@ namespace s4dServer.Models
         public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
         [IgnoreDataMember]
         public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
-        [IgnoreDataMember]
-        public virtual ICollection<PromotionProduct> PromotionProducts { get; set; } = new List<PromotionProduct>();
     }
 }

@@ -22,7 +22,6 @@ namespace s4dServer.Models
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
-        public DbSet<PromotionProduct> PromotionProducts { get; set; }
 
     }
 }

@@ -69,6 +69,7 @@ namespace s4dServer.Services.ServiceImpl
             product.Category = category;
 
             _context.Products.Add(product);
+            
             await _context.SaveChangesAsync();
 
             var responseDTO = _mapper.Map<ProductResponseDTO>(product);

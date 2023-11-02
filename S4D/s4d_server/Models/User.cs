@@ -23,8 +23,8 @@ namespace s4dServer.Models
         [Required(ErrorMessage = "Role is required")]
         public string? Role { get; set; }
 
-        [Range(0, ulong.MaxValue, ErrorMessage = "Invalid Status value")]
-        public ulong Status { get; set; }
+        [Range(0, byte.MaxValue, ErrorMessage = "Invalid Status value")]
+        public byte Status { get; set; }
 
         [StringLength(255, ErrorMessage = "Address must not exceed 255 characters")]
         public string? Address { get; set; }

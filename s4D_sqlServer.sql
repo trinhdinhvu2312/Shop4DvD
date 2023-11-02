@@ -5,6 +5,8 @@ CREATE DATABASE s4d;
 USE s4d;
 GO
 
+
+
 -- Tạo bảng Users
 CREATE TABLE Users (
     UserID INT PRIMARY KEY IDENTITY(1,1),
@@ -12,7 +14,7 @@ CREATE TABLE Users (
     Password NVARCHAR(255) NOT NULL,
     Email NVARCHAR(255) NOT NULL,
     Role NVARCHAR(50) NOT NULL,
-    Status bit,
+    Status tinyint,
     Address NVARCHAR(255),
     PhoneNumber NVARCHAR(20)
 );
@@ -49,6 +51,7 @@ CREATE TABLE Products (
     ProviderName NVARCHAR(255),
     Duration INT,
     Image NVARCHAR(255),
+	PromotionID int
 );
 
 -- Tạo bảng Orders
@@ -85,7 +88,7 @@ CREATE TABLE Promotions (
     Description NVARCHAR(MAX),
     StartDate DATE,
     EndDate DATE,
-	DiscountPercentage bit
+	DiscountPercentage int
 );
 
 -- Tạo bảng PromotionProducts

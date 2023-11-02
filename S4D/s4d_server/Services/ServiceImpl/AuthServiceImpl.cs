@@ -54,7 +54,10 @@ namespace s4dServer.Services.ServiceImpl
 
         public async Task<ActionResult> Login(LoginRequestDTO model)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(u => u.Status == 1 && u.Username.ToLower() == model.Username);
+            var user = await _context.Users.SingleOrDefaultAsync(u => 
+                                            u.Status == 1 
+                                            && u.Username.ToLower() == model.Username);
+
 
             if (user == null || user.Password != HashPassword(model.Password))
             {
