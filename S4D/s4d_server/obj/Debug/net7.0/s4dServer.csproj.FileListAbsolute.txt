@@ -31,6 +31,7 @@ D:\Aptech\e-Project3\Shop4DvD\S4D\s4dServer\obj\Debug\net7.0\refint\s4dServer.dl
 D:\Aptech\e-Project3\Shop4DvD\S4D\s4dServer\obj\Debug\net7.0\s4dServer.pdb
 D:\Aptech\e-Project3\Shop4DvD\S4D\s4dServer\obj\Debug\net7.0\s4dServer.genruntimeconfig.cache
 D:\Aptech\e-Project3\Shop4DvD\S4D\s4dServer\obj\Debug\net7.0\ref\s4dServer.dll
+<<<<<<< Updated upstream
 D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\obj\Debug\net7.0\s4dServer.csproj.AssemblyReference.cache
 D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\obj\Debug\net7.0\s4dServer.GeneratedMSBuildEditorConfig.editorconfig
 D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\obj\Debug\net7.0\s4dServer.AssemblyInfoInputs.cache
@@ -361,3 +362,8 @@ D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\obj\Debug\net7.0\refint\s4dServer.d
 D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\obj\Debug\net7.0\s4dServer.pdb
 D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\obj\Debug\net7.0\s4dServer.genruntimeconfig.cache
 D:\Aptech\e-Project3\Shop4DvD\S4D\s4d_server\obj\Debug\net7.0\ref\s4dServer.dll
+=======
+C:\Users\hieuv\OneDrive\Desktop\Aptech\e-project3\Shop4DvD\S4D\s4d_server\obj\Debug\net7.0\s4dServer.dll
+C:\Users\hieuv\OneDrive\Desktop\Aptech\e-project3\Shop4DvD\S4D\s4d_server\obj\Debug\net7.0\refint\s4dServer.dll
+C:\Users\hieuv\OneDrive\Desktop\Aptech\e-project3\Shop4DvD\S4D\s4d_server\obj\Debug\net7.0\s4dServer.pdb
+>>>>>>> Stashed changes
